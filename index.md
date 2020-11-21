@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: 主页
 nav_order: 1
 description: "qms-dev团队开发文档"
 permalink: /
@@ -12,7 +12,7 @@ permalink: /
 这是qms-dev团队的所有开发文档，托管在Github
 {: .fs-6 .fw-300 }
 
-[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub](https://github.com/pmarsceill/just-the-docs){: .btn .fs-5 .mb-4 .mb-md-0 }
+[在Github上查看](https://github.com/qms-dev/qms-dev.github.io){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [加入我们](https://jq.qq.com/?_wv=1027&k=ESPtAHTt){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
