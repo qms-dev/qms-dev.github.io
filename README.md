@@ -28,4 +28,4 @@ qms-dev的团队开发文档仓库📖，此文档使用Jekyll主题 - [Just the
 
 ### 提交文档✅
 
-要提交文档非常容易，因为本仓库是基于[Jekyll](http://jekyllcn.com/)的，使用了主题[Just the Docs](https://github.com/pmarsceill/just-the-docs)的样式和一些小功能，所以主要提交过程就是，把项目`clone`到本地，`commit`自己要新增/修改/删除的`Markdown文档`到仓库目录下即可，Github会自动帮我们编译并生成对应的页面
+要提交文档非常容易，因为本仓库是基于[Jekyll](http://jekyllcn.com/)的，使用了主题[Just the Docs](https://github.com/pmarsceill/just-the-docs)的样式和一些小功能，所以主要提交过程就是，把项目`clone`到本地，`push`自己要新增/修改/删除的`Markdown文档`到仓库目录下即可，Github会自动帮我们编译并生成对应的页面
