@@ -14,7 +14,7 @@ qms-dev的团队开发文档仓库📖，此文档使用Jekyll主题 - [Just the
 
 ## 如何使用此文档
 
-> 本文档使用[Github Pages](https://pages.github.com/)托管，根据官方文档的域名要求，采用http://qms-dev.github.io/作为域名
+> 本文档使用[Github Pages](https://pages.github.com/)托管，根据官方文档的域名要求，采用http://qms-dev.github.io/ 作为域名
 
 ### 文档内容及放置位置🎈
 
@@ -22,7 +22,7 @@ qms-dev的团队开发文档仓库📖，此文档使用Jekyll主题 - [Just the
 
 新增的文档请添加到`docs`目录，按照文档内容对文件夹简单分类即可，文档最终对应的页面相对位置是由文件内容最前面的标注决定的，具体可以观察已有文件对应页面在站点中的位置就可以很容易看出应该如何标注。
 
-更多细节功能的使用方法可以查看主题文档https://pmarsceill.github.io/just-the-docs/，通常来说，几乎不需要使用该文档内的额外功能，除非有特殊美化需要
+更多细节功能的使用方法可以查看主题文档https://pmarsceill.github.io/just-the-docs/ ，通常来说，几乎不需要使用该文档内的额外功能，除非有特殊美化需要
 
 
 
