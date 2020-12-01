@@ -23,27 +23,32 @@ permalink: docs/api
 
 **请求方式**
 
+**接口说明：**`id`在URL中直接作为参数拼接
 
+**请求方法：**GET
 
-**请求参数**
+**请求URL：**https://example.com/api/problem?id={id}
 
-| 参数 | 类型 | 是否必填 | 描述 |
-| ---- | ---- | -------- | ---- |
-|      |      |          |      |
+**返回结果（JSON）**
 
-
-
-**返回结果**
-
-| 参数 | 类型 | 是否必填 | 描述 |
-| ---- | ---- | -------- | ---- |
-|      |      |          |      |
+| 参数        | 类型   | 是否必填 | 描述                             |
+| ----------- | ------ | -------- | -------------------------------- |
+| errcode     | Int    | 是       | 错误码                           |
+| errmsg      | String | 是       | 错误信息                         |
+| question_id | Int    | 是       | 题目id，单平台来源唯一           |
+| platform    | String | 是       | 来源平台                         |
+| title       | String | 是       | 标题                             |
+| content     | String | 是       | 题目内容（带html标记的题干内容） |
+| difficulty  | String | 是       | 题目难度  (easy/medium/hard)     |
 
 
 
 **示例**
 
 ```json
-
+返回：
+{
+    
+}
 ```
 
