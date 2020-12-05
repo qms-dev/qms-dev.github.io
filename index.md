@@ -9,7 +9,7 @@ permalink: /
 # qms-dev团队开发文档
 {: .fs-9 }
 
-这是qms-dev团队的所有开发文档，托管在Github
+这是qms-dev团队的所有开发文档，Welcome to QMOJ
 {: .fs-6 .fw-300 }
 
 [在Github上查看](https://github.com/qms-dev/qms-dev.github.io){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [加入我们](https://jq.qq.com/?_wv=1027&k=ESPtAHTt){: .btn .fs-5 .mb-4 .mb-md-0 }
