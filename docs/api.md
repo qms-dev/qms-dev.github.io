@@ -83,7 +83,7 @@ permalink: docs/api
 ```json
 {
     "errcode": 400,
-    "errmsg": "请求的题目不存在，请检查参数是否正确",
+    "errmsg": "请求的题目不存在，请检查参数是否正确"
 }
 ```
 
