@@ -20,7 +20,7 @@ permalink: docs/api
 
 ---
 
-## 获取题目列表
+## 获取题目列表(完成)
 
 > 获取当前平台的所有题目列表
 
@@ -43,7 +43,7 @@ permalink: docs/api
 | id         | Int         | 是       | qmoj唯一题目id，不保证连续            |
 | title      | String      | 是       | 题目标题                              |
 | difficulty | Int         | 是       | 题目难度  (0/1/2对应easy/medium/hard) |
-| topic_tags | Json(Array) | 是       | 题目的标签，中文形式                  |
+| topicTags  | Json(Array) | 是       | 题目的标签，中文形式                  |
 
 **响应示例**
 
@@ -57,7 +57,7 @@ permalink: docs/api
                 "id": 1,
                 "title": "两数之和",
                 "difficulty": 0,
-                "topic_tags": [
+                "topicTags": [
                     "数组",
                     "哈希表"
                 ]
@@ -66,7 +66,7 @@ permalink: docs/api
                 "id": 2,
                 "title": "三数之和",
                 "difficulty": 1,
-                "topic_tags": [
+                "topicTags": [
                     "数组",
                     "哈希表"
                 ]
@@ -87,7 +87,7 @@ permalink: docs/api
 
 
 
-## 获取题目列表（分页）
+## 获取题目列表（分页）(未完成)
 
 > 按照分页条件获取当前平台的题目列表
 
@@ -130,7 +130,7 @@ permalink: docs/api
 | id         | Int         | 是       | qmoj唯一题目id，不保证连续            |
 | title      | String      | 是       | 题目标题                              |
 | difficulty | Int         | 是       | 题目难度  (0/1/2对应easy/medium/hard) |
-| topic_tags | Json(Array) | 是       | 题目的标签，中文形式                  |
+| topicTags  | Json(Array) | 是       | 题目的标签，中文形式                  |
 
 **响应示例**
 
@@ -148,7 +148,7 @@ permalink: docs/api
                 "id": 1,
                 "title": "两数之和",
                 "difficulty": 0,
-                "topic_tags": [
+                "topicTags": [
                     "数组",
                     "哈希表"
                 ]
@@ -157,7 +157,7 @@ permalink: docs/api
                 "id": 2,
                 "title": "三数之和",
                 "difficulty": 1,
-                "topic_tags": [
+                "topicTags": [
                     "数组",
                     "哈希表"
                 ]
@@ -178,7 +178,7 @@ permalink: docs/api
 
 
 
-## 获取特定题目内容
+## 获取特定题目内容(完成)
 
 > 通过题目唯一标识获取题目内容
 
@@ -208,7 +208,7 @@ permalink: docs/api
 | content    | String      | 是       | 题目内容（带html标记的题干内容）                             |
 | difficulty | Int         | 是       | 题目难度  (0/1/2对应easy/medium/hard)                        |
 | languages  | Json(Array) | 是       | 支持的语言类型，从小到大排列，具体类型参考[语言类型参照表](/languagetypes) |
-| topic_tags | Json(Array) | 是       | 题目的标签，中文形式                                         |
+| topicTags  | Json(Array) | 是       | 题目的标签，中文形式                                         |
 
 
 
@@ -229,7 +229,7 @@ permalink: docs/api
             1,
             2
         ],
-        "topic_tags": [
+        "topicTags": [
             "数组",
             "哈希表"
         ]
@@ -250,10 +250,89 @@ permalink: docs/api
 
 
 
-## 提交题解
+
+## 提交题解(未完成)
 
 > 提交题解到后端，并返回唯一的提交流水号
 
 **接口说明：**请求参数使用JSON格式
 
 **请求方法：**POST
+
+**URL示例：**`https://example.com/api/answers/submit`
+
+
+
+**请求参数：**
+
+| 参数     | 类型   | 是否必填 | 描述                                                         |
+| -------- | ------ | -------- | ------------------------------------------------------------ |
+| id       | Int    | 是       | 要提交的题目号                                               |
+| answer   | string | 是       | 题解内容                                                     |
+| language | Int    | 是       | 使用的语言类型，具体类型参考[语言类型参照表](/docs/languagetypes) |
+
+
+
+**返回结果（JSON）**
+
+| 参数   | 类型   | 是否必填 | 描述                     |
+| ------ | ------ | -------- | ------------------------ |
+| status | Int    | 是       | 错误码                   |
+| msg    | String | 是       | 错误信息                 |
+| data   | Json   | 否       | 提交详情，响应成功时返回 |
+
+
+
+**提交详情（JSON)**
+
+| 参数         | 类型   | 是否必填 | 描述                             |
+| ------------ | ------ | -------- | -------------------------------- |
+| submissionId | String | 是       | 提交流水号，用于查询本次答题结果 |
+
+
+
+**请求示例代码（JavaScript）**
+
+```json
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify({"id":1,"answer":"print(\"hello,world!\")","language":3});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://example.com/api/answers/submit", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+
+
+
+**响应示例**
+
+```json
+{
+    "status": 0,
+    "msg": "",
+    "data": {
+        "submissionId":"10001"
+    }
+}
+```
+
+
+
+**错误示例**
+
+```json
+{
+    "status": -1,
+    "msg": "服务器内部错误，请重试"
+}
+```
