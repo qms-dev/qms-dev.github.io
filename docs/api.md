@@ -38,12 +38,12 @@ permalink: docs/api
 
 **题目列表（全部）**
 
-| 参数         | 类型        | 是否必填 | 描述                                  |
-| ------------ | ----------- | -------- | ------------------------------------- |
-| id           | Int         | 是       | qmoj唯一题目id，不保证连续            |
-| title        | String      | 是       | 题目标题                              |
-| difficulty   | Int         | 是       | 题目难度  (0/1/2对应easy/medium/hard) |
-| questionTags | Json(Array) | 是       | 题目的标签，中文形式                  |
+| 参数       | 类型        | 是否必填 | 描述                                  |
+| ---------- | ----------- | -------- | ------------------------------------- |
+| id         | Int         | 是       | qmoj唯一题目id，不保证连续            |
+| title      | String      | 是       | 题目标题                              |
+| difficulty | Int         | 是       | 题目难度  (0/1/2对应easy/medium/hard) |
+| topicTags  | Json(Array) | 是       | 题目的标签，中文形式                  |
 
 **响应示例**
 
@@ -57,7 +57,7 @@ permalink: docs/api
                 "id": 1,
                 "title": "两数之和",
                 "difficulty": 0,
-                "questionTags": [
+                "topicTags": [
                     "数组",
                     "哈希表"
                 ]
@@ -66,7 +66,7 @@ permalink: docs/api
                 "id": 2,
                 "title": "三数之和",
                 "difficulty": 1,
-                "questionTags": [
+                "topicTags": [
                     "数组",
                     "哈希表"
                 ]
@@ -125,12 +125,12 @@ permalink: docs/api
 
 **当前页的记录**
 
-| 参数         | 类型        | 是否必填 | 描述                                  |
-| ------------ | ----------- | -------- | ------------------------------------- |
-| id           | Int         | 是       | qmoj唯一题目id，不保证连续            |
-| title        | String      | 是       | 题目标题                              |
-| difficulty   | Int         | 是       | 题目难度  (0/1/2对应easy/medium/hard) |
-| questionTags | Json(Array) | 是       | 题目的标签，中文形式                  |
+| 参数       | 类型        | 是否必填 | 描述                                  |
+| ---------- | ----------- | -------- | ------------------------------------- |
+| id         | Int         | 是       | qmoj唯一题目id，不保证连续            |
+| title      | String      | 是       | 题目标题                              |
+| difficulty | Int         | 是       | 题目难度  (0/1/2对应easy/medium/hard) |
+| topicTags  | Json(Array) | 是       | 题目的标签，中文形式                  |
 
 **响应示例**
 
@@ -148,7 +148,7 @@ permalink: docs/api
                 "id": 1,
                 "title": "两数之和",
                 "difficulty": 0,
-                "questionTags": [
+                "topicTags": [
                     "数组",
                     "哈希表"
                 ]
@@ -157,7 +157,7 @@ permalink: docs/api
                 "id": 2,
                 "title": "三数之和",
                 "difficulty": 1,
-                "questionTags": [
+                "topicTags": [
                     "数组",
                     "哈希表"
                 ]
@@ -200,15 +200,15 @@ permalink: docs/api
 
 **题目内容（JSON）**
 
-| 参数         | 类型        | 是否必填 | 描述                                                         |
-| ------------ | ----------- | -------- | ------------------------------------------------------------ |
-| id           | Int         | 是       | qmoj唯一题目id                                               |
-| platform     | String      | 是       | 来源平台(如：LeetCode，原创等)                               |
-| title        | String      | 是       | 标题                                                         |
-| content      | String      | 是       | 题目内容（带html标记的题干内容）                             |
-| difficulty   | Int         | 是       | 题目难度  (0/1/2对应easy/medium/hard)                        |
-| languages    | Json(Array) | 是       | 支持的语言类型，从小到大排列，具体类型参考[语言类型参照表](/languagetypes) |
-| questionTags | Json(Array) | 是       | 题目的标签，中文形式                                         |
+| 参数       | 类型        | 是否必填 | 描述                                                         |
+| ---------- | ----------- | -------- | ------------------------------------------------------------ |
+| id         | Int         | 是       | qmoj唯一题目id                                               |
+| platform   | String      | 是       | 来源平台(如：LeetCode，原创等)                               |
+| title      | String      | 是       | 标题                                                         |
+| content    | String      | 是       | 题目内容（带html标记的题干内容）                             |
+| difficulty | Int         | 是       | 题目难度  (0/1/2对应easy/medium/hard)                        |
+| languages  | Json(Array) | 是       | 支持的语言类型，从小到大排列，具体类型参考[语言类型参照表](/languagetypes) |
+| topicTags  | Json(Array) | 是       | 题目的标签，中文形式                                         |
 
 
 
@@ -229,7 +229,7 @@ permalink: docs/api
             1,
             2
         ],
-        "questionTags": [
+        "topicTags": [
             "数组",
             "哈希表"
         ]
