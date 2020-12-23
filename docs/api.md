@@ -336,3 +336,74 @@ fetch("https://example.com/api/answers/submit", requestOptions)
     "msg": "服务器内部错误，请重试"
 }
 ```
+
+
+
+
+
+## 获取判题结果(未完成)
+
+> 通过提交流水号获取判题结果
+
+**接口说明：**`id`是提交题目的流水号，在URL中直接作为参数拼接
+
+**请求方法：**GET
+
+**URL示例：**`https://example.com/api/judgement?id=1`
+
+**返回结果（JSON）**
+
+| 参数   | 类型   | 是否必填 | 描述                                       |
+| ------ | ------ | -------- | ------------------------------------------ |
+| status | Int    | 是       | 错误码(此处会出现特殊错误码-2，详见错误码) |
+| msg    | String | 是       | 错误信息                                   |
+| data   | Json   | 否       | 判题结果                                   |
+
+
+
+**判题结果**
+
+| 参数   | 类型   | 是否必填 | 描述                                                   |
+| ------ | ------ | -------- | ------------------------------------------------------ |
+| id     | Int    | 是       | 提交题目流水号                                         |
+| result | Int    | 是       | 提交结果枚举，(0/1/2/3/4/5对应AC/WA/CE/RE/TLE/MLE)[^1] |
+| time   | Int    | 是       | 花费时间，单位毫秒                                     |
+| memory | Int    | 是       | 使用内存，单位KB                                       |
+| detail | String | 是       | 错误详情(成功则留空)                                   |
+
+
+
+**响应示例**
+
+```json
+{
+    "status": 0,
+    "msg": "",
+    "data": {
+        "id": 10001,
+        "result": 1,
+        "time": 1000,
+        "memeroy": 1024,
+        "detail": "第3个用例处出现错误"
+    }
+}
+```
+
+**错误示例**
+
+```json
+{
+    "status": -2,
+    "msg": "正在判题中，请稍后再试"
+}
+```
+
+
+
+
+
+
+
+
+
+[^1]:Accepted (AC), Presentation Error (PE) ,Wrong Answer (WA),Runtime Error (RE),Time Limit Exceeded (TLE) ,Memory Limit Exceeded (MLE) ,Output Limit Exceeded (OLE),Compilation Error (CE) ,Restricted Function (RF),Internal Error (IE)
