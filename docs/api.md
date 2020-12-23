@@ -293,7 +293,7 @@ permalink: docs/api
 
 **请求示例代码（JavaScript）**
 
-```json
+```javascript
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
