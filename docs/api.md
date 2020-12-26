@@ -365,7 +365,7 @@ fetch("https://example.com/api/answers/submit", requestOptions)
 
 | 参数   | 类型   | 是否必填 | 描述                                                   |
 | ------ | ------ | -------- | ------------------------------------------------------ |
-| id     | Int    | 是       | 提交题目流水号                                         |
+| id     | String | 是       | 提交题目流水号                                         |
 | result | Int    | 是       | 提交结果枚举，(0/1/2/3/4/5对应AC/WA/CE/RE/TLE/MLE)[^1] |
 | time   | Int    | 是       | 花费时间，单位毫秒                                     |
 | memory | Int    | 是       | 使用内存，单位KB                                       |
