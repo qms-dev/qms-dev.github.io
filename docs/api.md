@@ -380,7 +380,7 @@ fetch("https://example.com/api/answers/submit", requestOptions)
     "status": 0,
     "msg": "",
     "data": {
-        "id": 10001,
+        "id": "10001",
         "result": 1,
         "time": 1000,
         "memeroy": 1024,
