@@ -251,7 +251,7 @@ permalink: docs/api
 
 
 
-## 提交题解(未完成)
+## 提交题解(完成)
 
 > 提交题解到后端，并返回唯一的提交流水号
 
@@ -341,7 +341,7 @@ fetch("https://example.com/api/answers/submit", requestOptions)
 
 
 
-## 获取判题结果(未完成)
+## 获取判题结果(完成)
 
 > 通过提交流水号获取判题结果
 
@@ -363,13 +363,19 @@ fetch("https://example.com/api/answers/submit", requestOptions)
 
 **判题结果**
 
-| 参数   | 类型   | 是否必填 | 描述                                                   |
-| ------ | ------ | -------- | ------------------------------------------------------ |
-| id     | String | 是       | 提交题目流水号                                         |
-| result | Int    | 是       | 提交结果枚举，(0/1/2/3/4/5对应AC/WA/CE/RE/TLE/MLE)[^1] |
-| time   | Int    | 是       | 花费时间，单位毫秒                                     |
-| memory | Int    | 是       | 使用内存，单位KB                                       |
-| detail | String | 是       | 错误详情(成功则留空)                                   |
+| 参数           | 类型   | 是否必填 | 描述                                                         |
+| -------------- | ------ | -------- | ------------------------------------------------------------ |
+| id             | String | 是       | 提交题目流水号                                               |
+| result         | Int    | 是       | 提交结果枚举，(0/1/2/3/4/5对应AC/WA/CE/RE/TLE/MLE)[^1]       |
+| time           | String | 是       | 花费时间，字符串形式，可以直接显示在前端，如("80 ms"，"N/A"等) |
+| memory         | String | 是       | 使用内存，花费时间，字符串形式，可以直接显示在前端，如("37.9 MB"，"N/A"等) |
+| language       | int    | 是       | 使用的语言类型，具体类型参考[语言类型参照表](/docs/languagetypes) |
+| lastTestCase   | String | 否       | 最后一个测试用例的内容，目前除AC和CE以外，此字段会有内容     |
+| expectedOutput | String | 否       | 最后一个测试用例期望输出的结果，目前除AC和CE以外，此字段会有内容 |
+| totalCorrect   | int    | 否       | 通过的测试用例数，目前除CE以外，此字段会有内容               |
+| totalTestCases | int    | 否       | 总共的测试用例数，目前除CE以外，此字段会有内容               |
+| error          | String | 否       | 错误信息，目前当出现RE，CE时此字段会有内容                   |
+| errorDetail    | String | 否       | 错误详情，目前当出现RE，CE时候会有内容                       |
 
 
 
@@ -377,15 +383,21 @@ fetch("https://example.com/api/answers/submit", requestOptions)
 
 ```json
 {
-    "status": 0,
-    "msg": "",
-    "data": {
-        "id": "10001",
-        "result": 1,
-        "time": 1000,
-        "memeroy": 1024,
-        "detail": "第3个用例处出现错误"
-    }
+  "status": 0,
+  "msg": "",
+  "data": {
+    "id": "100000001",
+    "result": 3,
+    "time": "N/A",
+    "memory": "N/A",
+    "language": 3,
+    "lastTestCase": "[2,7,11,15]\n9",
+    "expectedOutput": "[0,1]",
+    "totalCorrect": 0,
+    "totalTestCases": 52,
+    "error": "Line 3: NameError: name 'pring' is not defined",
+    "errorDetail": "NameError: name 'pring' is not defined\n    pring(hello)\nLine 3 in twoSum (Solution.py)\n    ret = Solution().twoSum(param_1, param_2)\nLine 29 in _driver (Solution.py)\n    _driver()\nLine 40 in <module> (Solution.py)"
+  }
 }
 ```
 
