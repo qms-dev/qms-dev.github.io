@@ -8,7 +8,7 @@ permalink: docs/api
 
 # 接口文档
 
-> 实际使用过程中，替换示例API`/api`前面的部分即可
+> 实际使用过程中，替换``https://example.com`即可
 
 {: .no_toc }
 
@@ -26,7 +26,7 @@ permalink: docs/api
 
 **请求方法：**GET
 
-**URL示例：**`https://example.com/api/questionset`
+**URL示例：**`https://example.com/questionset`
 
 **返回结果（JSON）**
 
@@ -95,7 +95,7 @@ permalink: docs/api
 
 **请求方法：**GET
 
-**URL示例：**`https://example.com/api/questionset?pageNum=1&pageSize=5&orderBy=title desc`
+**URL示例：**`https://example.com/questionset?pageNum=1&pageSize=5&orderBy=title desc`
 
 **请求参数说明**
 
@@ -186,7 +186,7 @@ permalink: docs/api
 
 **请求方法：**GET
 
-**URL示例：**`https://example.com/api/questions?id=1`
+**URL示例：**`https://example.com/questions?id=1`
 
 **返回结果（JSON）**
 
@@ -259,7 +259,7 @@ permalink: docs/api
 
 **请求方法：**POST
 
-**URL示例：**`https://example.com/api/answers/submit`
+**URL示例：**`https://example.com/answers/submit`
 
 
 
@@ -306,7 +306,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://example.com/api/answers/submit", requestOptions)
+fetch("https://example.com/answers/submit", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -349,7 +349,7 @@ fetch("https://example.com/api/answers/submit", requestOptions)
 
 **请求方法：**GET
 
-**URL示例：**`https://example.com/api/judgement?id=1`
+**URL示例：**`https://example.com/judgement?id=1`
 
 **返回结果（JSON）**
 
